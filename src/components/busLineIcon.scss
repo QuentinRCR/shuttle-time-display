@@ -1,0 +1,13 @@
+.icon{
+    height: 45px;
+    width: 45px;
+    border: 3.2px solid #47b66a;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0; //to avoid the deformation of the icon
+}

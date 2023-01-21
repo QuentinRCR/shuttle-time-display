@@ -1,0 +1,76 @@
+@import url("global.scss");
+
+.selectArea{
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .choice{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 35px;
+
+            .icons{
+                //border: solid blue;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .startPoint{
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 10px;
+                    border: solid black;
+                    margin-bottom: 2px;
+                    margin-top: 5px;
+                }
+
+                .dot{
+                    height: 8px;
+                    width: 8px;
+                    border-radius: 4px;
+                    background-color: black;
+                    margin-top: 4px;
+                    margin-bottom: 4px;
+                }
+
+                .positionIcon{
+                    margin-top: 3px;
+                    height: 40px;
+                }
+
+                .clockIcon{
+                    margin-top: 35px;
+                    height: 40px;
+                }
+            }
+
+            .selects{
+                margin-left: 20px;
+                //border: solid red;
+                display: flex;
+                flex-direction: column;
+
+                #startName{
+                    margin-bottom: 55px;
+                }
+
+                .selectLocation{
+                    background-color: white;
+                    border: solid #eee;
+                    font-size: 18px;
+                    border-radius: 5px;
+                    min-width: 250px;
+                }
+
+                #dateTime{
+                    margin-top: 45px;
+                }
+            }
+    
+        }
+
+    }
+}
