@@ -17,91 +17,75 @@
         align-items: center;
         width: 100%;
 
-        .infos{
+        .infos {
             margin-left: 20px;
             width: 100%;
 
-            .times{
+            .times {
                 display: flex;
                 justify-content: space-between;
-                
+
             }
 
         }
     }
 
-    .expandedPart{
-        margin-top: 15px;
-        display: flex;
+
+    .expandedPart2 {
         width: 100%;
-        //border: solid blue;
+        margin-top: 20px;
+        margin-left: 14px;
+        display: grid;
+        grid-template-columns: 40px 1fr 50px;
+        /*grid-template-rows: 27px repeat(6, 15px 15px 20px) 15px 15px 45px;*/ //this property is dinamically set
+        grid-auto-flow: column;
 
 
-        .icons{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 65px; //to have the icons center compared to the line letter
-            //border: solid red;
-
-            .startItem{
-                height: 15px;
-                width: 15px;
-                border-radius: 10px;
-                border: solid #47b66a 3px;
-                //margin-bottom: 2px;
-                margin-top: 1.5px; //to be ligned with the name
-            }
-
-            .dot{
-                height: 8px;
-                width: 8px;
-                border-radius: 4px;
-                background-color: black;
-                margin-top: 4px;
-                margin-bottom: 4px;
-            }
-
-            .stopIcon{
-                height: 10px;
-                width: 10px;
-                border-radius: 5px;
-                background-color: #47b66a;
-                margin-top: 4px;
-                margin-bottom: 4px;
-            }
-
-            .positionIcon{
-                //margin-top: 3px;
-                height: 40px;
-            }
+        .startItem {
+            height: 15px;
+            width: 15px;
+            border-radius: 10px;
+            border: solid #47b66a;
+            justify-self: center;
+            align-self: center;
         }
 
-        .text{
-            //border: #47b66a solid;
-            width: 100%;
-            margin-left: 20px;
+        .dot {
+            height: 8px;
+            width: 8px;
+            border-radius: 4px;
+            background-color: black;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .stopIcon {
+            height: 10px;
+            width: 10px;
+            border-radius: 5px;
+            background-color: #47b66a;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .positionIcon {
+            height: 40px;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .stop{
+            align-self: center;
+        }  
+
+        .timeStop{
+            align-self: center;      
             
-
-            .stopAndTime{
-                display: flex;
-                justify-content: space-between;
-                //border: solid green;
-
-                &:first-child{
-                    margin-top: 0;
-                    padding-bottom: 1px;
-                }
-
-                margin-top: 25.75px;
-                margin-bottom: 25.75px; //to mat
-
-                &:last-child{
-                    padding-top: 10px;
-                }
-            }
         }
 
-        
+        .filler{
+            grid-row: span 2;
+        }
     }
+
 }
