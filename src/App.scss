@@ -33,4 +33,23 @@
     width: 80%;
     color: #ccc;
   }
+
+  footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    
+    a{
+      text-decoration: none;
+    }
+
+    p{
+      margin-top: 20px;
+      min-width: 290px;
+      max-width: 400px;
+      width: 70%;
+      font-size: 18px;
+    }
+  }
 }

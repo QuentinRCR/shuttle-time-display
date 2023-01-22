@@ -20,6 +20,11 @@ function App() {
         <hr />
         <ResultBox></ResultBox>
       </main>
+      <footer>
+        <hr />
+        <a className='button' href="http://" target="_blank" rel="noopener noreferrer">Accéder à la fiche horaire</a>
+        <p>Ces horaires pourront être adaptés en fonction des conditions d'exploitation (condition de circulation, météo...)</p>
+      </footer>
       
     </div>
   );
