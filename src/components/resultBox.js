@@ -5,42 +5,8 @@ import React from 'react';
 
 
 
-function resultBox() {
-    const stopDetails = [
-        {
-            "stop": "Le Planet",
-            "stopTime": "23:30"
-        },
-        {
-            "stop": "L'Epalud",
-            "stopTime": "23:32"
-        },
-        {
-            "stop": "Edelweiss",
-            "stopTime": "23:34"
-        },
-        {
-            "stop": "ATC",
-            "stopTime": "23:36"
-        },
-        {
-            "stop": "Roc Noir / Mairie",
-            "stopTime": "23:38"
-        },
-        {
-            "stop": "Les Longues",
-            "stopTime": "23:40"
-        },
-        {
-            "stop": "La Madeleine",
-            "stopTime": "23:42"
-        },
-        {
-            "stop": "La Lauzière",
-            "stopTime": "23:44"
-        }
-    ];
-
+function resultBox(stopDetails) {
+    stopDetails=Object.values(stopDetails)[0]; //transform object to array
     return (
         <div className='component'>
             <div className='mainbox'>
