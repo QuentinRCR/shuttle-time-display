@@ -1,15 +1,23 @@
 import './resultBox.scss';
 import BusLineIcon from "./busLineIcon"
 import positionIcon from '../images/positionIcon.png'
-import React from 'react';
+import React, { useState } from 'react';
 
 
 
-function resultBox(stopDetails) {
+function ResultBox(stopDetails) {
     stopDetails=Object.values(stopDetails)[0]; //transform object to array
+
+    const [expanded, setExpanded] = useState(false);
+
+    
+    function handleClick() {
+        setExpanded(!expanded);
+    }
+    //console.log(expended);
     return (
         <div className='component'>
-            <div className='mainbox'>
+            <div className='mainbox' onClick={handleClick}>
                 <BusLineIcon className="BusLineIcon" line="A"></BusLineIcon>
                 <p className="infos">
                     <p className="times">
@@ -22,6 +30,8 @@ function resultBox(stopDetails) {
 
 
             {/*The expended part is a grid with all necessary informations */}
+
+            {expanded ? //the complementary info are displayed when clicked
             <div style={{ gridTemplateRows: "23px repeat("+(stopDetails.length-2).toString()+", 15px 15px 20px) 15px 15px 45px" }} className="expandedPart2"> {/*Define curtom row for the start icon, the repeat for every stop and then the last two dots and the position icon*/}
                 <div className="startItem"></div>
                 <div className="dot"></div>
@@ -48,9 +58,10 @@ function resultBox(stopDetails) {
                     </React.Fragment>
                 )}
             </div>
+            : "" /*to end the bloc to expend or result*/} 
 
         </div>
     );
 }
 
-export default resultBox;
+export default ResultBox;
