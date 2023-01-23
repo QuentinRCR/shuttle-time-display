@@ -26,6 +26,7 @@ function ResultBox(stopDetails) {
                     </p>
                     <p className="direction">Direction: La Lauzière</p>
                 </p>
+                <div className="arrow">{expanded ?  '▼': '▶' }</div> {/*arrow to show that the box is expendable */}
             </div>
 
 
