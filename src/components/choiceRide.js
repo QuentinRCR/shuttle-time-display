@@ -19,47 +19,51 @@ function ChoiceRide(){
         <div className="selectArea">
             <form>
                 <div className="choice">
-                    <div className="icons">
-                        <div className="startPoint"></div>
-                        <div className="dot"></div>
-                        <div className="dot"></div>
-                        <div className="dot"></div>
-                        <img className='positionIcon' src={positionIcon} alt="positionIcon" />
-                        <img className='calendarIcon' src={calendarIcon} alt="CalendarIcon" />
-                        <img className='clockIcon' src={clockIcon} alt="clockIcon" />
-                    </div>
-                    <div className="selects">
-                        <select name="startName" id="startName" class="selectField" required>
-                            <option value="Le Planet">Le Planet</option>
-                            <option value="ATC">ATC</option>
-                            <option value="La Lauzière">La Lauzière</option>
-                        </select>
-                        <select name="endName" id="endName" class="selectField" required>
-                            <option value="Le Planet">Le Planet</option>
-                            <option value="ATC">ATC</option>
-                            <option value="La Lauzière">La Lauzière</option>
-                        </select>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DatePicker
-                                className="datePicker selectField"
-                                disableFuture
-                                label="Date"
-                                openTo="days"
-                                views={['day']}
-                                value={date}
-                                onChange={(newDate) => {
-                                    setDate(newDate);
-                                }}
-                                renderInput={(params) => <TextField {...params} />}
-                            />
-                            <TimePicker
-                                className='timePicker selectField'
-                                value={time}
-                                onChange={setTime}
-                                renderInput={(params) => <TextField {...params} />}
-                            />
-                        </LocalizationProvider>
-                    </div>
+
+                    <div className="startPoint selectFormIcon"></div>
+                    <select name="startName" id="startName" class="selectField" required>
+                        <option value="Le Planet">Le Planet</option>
+                        <option value="ATC">ATC</option>
+                        <option value="La Lauzière">La Lauzière</option>
+                    </select>
+
+                    <div className="dot selectFormIcon"></div>
+                    <div className="fillIn"></div> {/* to align elements in the grid */}
+                    <div className="dot selectFormIcon"></div>
+                    <div className="dot selectFormIcon"></div>
+
+                    <img className='positionIcon selectFormIcon' src={positionIcon} alt="positionIcon" />
+                    <select name="endName" id="endName" class="selectField" required>
+                        <option value="Le Planet">Le Planet</option>
+                        <option value="ATC">ATC</option>
+                        <option value="La Lauzière">La Lauzière</option>
+                    </select>
+
+                    <img className='calendarIcon selectFormIcon' src={calendarIcon} alt="CalendarIcon" />
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DatePicker
+                            className="datePicker selectField"
+                            disableFuture
+                            label="Date"
+                            openTo="days"
+                            views={['day']}
+                            value={date}
+                            onChange={(newDate) => {
+                                setDate(newDate);
+                            }}
+                            renderInput={(params) => <TextField {...params} />}
+                        />
+                    </LocalizationProvider>
+
+                    <img className='clockIcon selectFormIcon' src={clockIcon} alt="clockIcon" />               
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <TimePicker
+                            className='timePicker selectField'
+                            value={time}
+                            onChange={setTime}
+                            renderInput={(params) => <TextField {...params} />}
+                        />
+                    </LocalizationProvider>
                 </div>
                 <input className='button' type="submit" value="Rechercher" />
             </form>
