@@ -10,7 +10,7 @@
         .choice{
             display: grid;
             grid-template-columns: 40px 1fr;
-            grid-template-rows: 25px repeat(3, 15px) 40px 80px 80px;
+            grid-template-rows: 25px repeat(3, 15px) 45px 105px 50px;
             grid-column-gap: 15px;
             align-items: center;
             min-width: 290px;
@@ -53,9 +53,10 @@
 
             .selectField{
                 background-color: white;
-                border: solid #eee;
+                border: solid #3c3c3c 1px;
                 font-size: 18px;
                 border-radius: 5px;
+                padding: 5px 10px 5px 13px;
             }
             #dateTime{
             }
@@ -66,6 +67,10 @@
             .timePicker{
             }
     
+        }
+
+        input[type="submit"]{
+            margin-top: 40px;
         }
 
     }

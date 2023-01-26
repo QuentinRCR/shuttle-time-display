@@ -11,10 +11,13 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import 'dayjs/locale/fr';
 
 function ChoiceRide(){
-    const [date, setDate] = React.useState(null);
-    const [time, setTime] = React.useState(null)
+    const [date, setDate] = React.useState(new Date());
+    const [time, setTime] = React.useState(new Date())
+    const [locale, setLocale] = React.useState('fr');
+    console.log(date);
     return (
         <div className="selectArea">
             <form>
@@ -40,9 +43,9 @@ function ChoiceRide(){
                     </select>
 
                     <img className='calendarIcon selectFormIcon' src={calendarIcon} alt="CalendarIcon" />
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <LocalizationProvider adapterLocale={locale} dateAdapter={AdapterDayjs}>
                         <DatePicker
-                            className="datePicker selectField"
+                            className="datePicker"
                             disableFuture
                             label="Date"
                             openTo="days"
@@ -51,17 +54,18 @@ function ChoiceRide(){
                             onChange={(newDate) => {
                                 setDate(newDate);
                             }}
-                            renderInput={(params) => <TextField {...params} />}
+                            renderInput={(params) => <TextField size="small" {...params} />}
                         />
                     </LocalizationProvider>
 
                     <img className='clockIcon selectFormIcon' src={clockIcon} alt="clockIcon" />               
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <LocalizationProvider adapterLocale={locale} dateAdapter={AdapterDayjs}>
                         <TimePicker
-                            className='timePicker selectField'
+                            label="Heure"
+                            className='timePicker'
                             value={time}
                             onChange={setTime}
-                            renderInput={(params) => <TextField {...params} />}
+                            renderInput={(params) => <TextField size="small" {...params} />}
                         />
                     </LocalizationProvider>
                 </div>
